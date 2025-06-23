@@ -6,7 +6,7 @@ import stripe
 # إعداد مفتاح API الخاص بـ Stripe من الإعدادات
 stripe.api_key = settings.STRIPE_API_KEY
 
-YOUR_DOMAIN = "https://wassimcoaching.com"
+YOUR_DOMAIN = "https://testsulieman.vercel.app"
 
 def index(request):
     return render(request, 'accounts/index.html')
