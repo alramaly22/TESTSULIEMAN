@@ -27,18 +27,17 @@ def create_checkout_session(request):
         try:
             # إنشاء جلسة Stripe Checkout لنوع الدفع لمرة واحدة
             checkout_session = stripe.checkout.Session.create(
-            payment_method_types=['card'],
-            line_items=[
-                {
-                    'price': price_id,
-                    'quantity': 1,
-                },
-            ],
-            mode="subscription",  # خليها كده بدل payment
-            success_url=YOUR_DOMAIN + "/second/",
-            cancel_url=YOUR_DOMAIN + "/cancel/",
-        )
-
+                payment_method_types=['card'],
+                line_items=[
+                    {
+                        'price': price_id,
+                        'quantity': 1,
+                    },
+                ],
+                mode="payment",  # وضع الدفع لمرة واحدة
+                success_url=YOUR_DOMAIN + "/second/",
+                cancel_url=YOUR_DOMAIN + "/cancel/",
+            )
             return redirect(checkout_session.url, code=303)
         except Exception as e:
             return HttpResponse(f"An error occurred: {str(e)}")
