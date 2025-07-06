@@ -623,12 +623,26 @@
                             <li class="pricing__list-item"><i class="ri-check-double-line pricing__list-icon"></i><p  data-lang="platinum5">Cooking & nutrition eBooks</p></li>
                             <li class="pricing__list-item"><i class="ri-check-double-line pricing__list-icon"></i><p  data-lang="platinum6">Supplement & lifestyle guidance</p></li>
                         </ul>
+<div class="grid" style="row-gap: 0.75rem;">
+    <form style="display: contents;" action="{% url 'create_checkout_session' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="price_id" value="price_1Rhoe8Lc3ja42ivyvJ6AOtAf">
+        <button type="submit" class="button pricing__button">A$1000 – 5 days/week</button>
+    </form>
 
-                        <div class="grid" style="row-gap: 0.75rem;">
-                            <a href="price_1Rhoe8Lc3ja42ivyvJ6AOtAf" class="button pricing__button" data-lang="platinum7">A$1000 – 5 days/week</a>
-                            <a href="price_1RhoeqLc3ja42ivypzDGwQBI" class="button pricing__button"  data-lang="platinum8">A$750 – 3–4 days/week</a>
-                            <a href="price_1RhofkLc3ja42ivygZ0MdHGN" class="button pricing__button"  data-lang="platinum9">A$80 – Per Single Session</a>
-                        </div>
+    <form style="display: contents;" action="{% url 'create_checkout_session' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="price_id" value="price_1RhoeqLc3ja42ivypzDGwQBI">
+        <button type="submit" class="button pricing__button">A$750 – 3–4 days/week</button>
+    </form>
+
+    <form style="display: contents;" action="{% url 'create_checkout_session' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="price_id" value="price_1RhofkLc3ja42ivygZ0MdHGN">
+        <button type="submit" class="button pricing__button">A$80 – Per Single Session</button>
+    </form>
+</div>
+
                     </article>
 
                 </div>
